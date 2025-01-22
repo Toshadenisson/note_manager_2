@@ -1,5 +1,5 @@
 import datetime
-
+# ФУНКЦИЯ ДЛЯ СОЗДАНИЯ ЗАМЕТКИ
 def create_note(**kwargs):
     while kwargs ['username'] == '':
         kwargs ['username']=input('Вы не указали имя пользователя. Пожалуйста, укажите имя пользователя еще раз: ')
