@@ -12,43 +12,47 @@ def search_notes(notes, keyword = None, status = None):
     if keyword == status == '':
         print('Вы не указали ни одного критерия для поиска!')
         pass
-    while keyword and status:
-        list_count1 = []
+    if keyword and status:
+        counter_1 = 0
         for i in notes:
             if keyword in i.values() and status in i.values():
                 print(f'Заметка № {notes.index(i) + 1}')
                 for j,k in i.items():
                     print(j,k)
             else:
-                list_count1.append('')
-                if len(list_count1) == len(notes):
-                    print('По Вашему запросу заметок не найдено!')
+                counter_1 += 1
+            if counter_1 == len(notes):
+                print('По Вашему запросу заметок не найдено!')
+                pass
         return notes
 
-    while keyword:
-        list_count2 = []
+    elif keyword:
+        counter_2 = 0
         for i in notes:
             if keyword in i.values():
                 print(f'Заметка № {notes.index(i) + 1}')
                 for j, k in i.items():
                     print(j, k)
             else:
-                list_count2.append('')
-                if len(list_count2) == len(notes):
-                    print('По Вашему запросу заметок не найдено!')
+                counter_2 += 1
+            if counter_2 == len(notes):
+                print('По Вашему запросу заметок не найдено!')
+                pass
         return notes
 
-    while status:
-        list_count3 = []
+
+    elif status:
+        counter_3 = 0
         for i in notes:
             if status in i.values():
                 print(f'Заметка № {notes.index(i) + 1}')
                 for j, k in i.items():
                     print(j, k)
             else:
-                list_count3.append('')
-                if len(list_count3) == len(notes):
-                    print('По Вашему запросу заметок не найдено!')
+                counter_3 += 1
+            if counter_3 == len(notes):
+                print('По Вашему запросу заметок не найдено!')
+                pass
         return notes
 
 search_notes(notes, status = input("Введите статус: ").lower(), keyword = (input('Введите ключевое слово: ')).capitalize())
