@@ -143,43 +143,44 @@ def search_notes(notes, keyword, status):
         print('Вы указали не существующий способ поиска')
         return search_notes(notes, keyword, status)
     while way_search == '1':
-        list_count1 = []
+        counter_1 = 0
         for i in notes:
             if keyword in i.values() and status in i.values():
                 print(f'Заметка № {notes.index(i) + 1}')
                 for j,k in i.items():
                     print(j,k)
             else:
-                list_count1.append('')
-                if len(list_count1) == len(notes):
+                counter_1 += 1
+            if counter_1 == len(notes):
                     print('По Вашему запросу заметок не найдено!')
                     return search_notes(notes,keyword,status)
         return notes
+
     while way_search == '2':
-        list_count2 = []
+        counter_2 = 0
         for i in notes:
             if keyword in i.values():
                 print(f'Заметка № {notes.index(i) + 1}')
                 for j, k in i.items():
                     print(j, k)
             else:
-                list_count2.append('')
-                if len(list_count2) == len(notes):
-                    print('По Вашему запросу заметок не найдено!')
-                    return search_notes(notes,keyword,status)
+                counter_2 += 1
+            if counter_2 == len(notes):
+                print('По Вашему запросу заметок не найдено!')
+                return search_notes(notes,keyword,status)
         return notes
     while way_search == '3':
-        list_count3 = []
+        counter_3 = 0
         for i in notes:
             if status in i.values():
                 print(f'Заметка № {notes.index(i) + 1}')
                 for j, k in i.items():
                     print(j, k)
             else:
-                list_count3.append('')
-                if len(list_count3) == len(notes):
-                    print('По Вашему запросу заметок не найдено!')
-                    return search_notes(notes,keyword,status)
+                counter_3 += 1
+            if counter_3 == len(notes):
+                print('По Вашему запросу заметок не найдено!')
+                return search_notes(notes,keyword,status)
         return notes
     return notes
 
